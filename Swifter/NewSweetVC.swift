@@ -15,11 +15,18 @@ class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var newSweetTextView: UITextView!
     
     var databaseRef = FIRDatabase.database().reference()
-    var loggedInUser = FIRAuth.auth()?.currentUser?.uid
-    
+    var loggedInUser: AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.loggedInUser = FIRAuth.auth()?.currentUser
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewSweetVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+
         
         newSweetTextView.textContainerInset = UIEdgeInsetsMake(30, 20, 20, 20)
         newSweetTextView.text = "What's going on?"
@@ -54,7 +61,8 @@ class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         if newSweetTextView.text.characters.count > 0 {
             
             let key = self.databaseRef.child("sweets").childByAutoId().key
-            let childUpdates = ["/sweets/\(self.loggedInUser!)/\(key)/text":newSweetTextView.text, "/sweets/\(self.loggedInUser!)/\(key)/timestamp":"\(NSDate().timeIntervalSince1970)"] as [String : Any]
+            
+            let childUpdates = ["/sweets/\(self.loggedInUser!.uid!)/\(key)/text":newSweetTextView.text, "/sweets/\(self.loggedInUser!.uid!)/\(key)/timestamp":"\(Date().timeIntervalSince1970)"] as [String : Any]
             
             self.databaseRef.updateChildValues(childUpdates)
             
@@ -63,7 +71,12 @@ class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         
     }
     
-    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     
     
     

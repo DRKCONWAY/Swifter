@@ -26,8 +26,6 @@ class NewUserVC: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewUserVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
-        
         
     }
 
@@ -35,17 +33,18 @@ class NewUserVC: UIViewController {
         errorMessage.text = "Sweet!"
         
         // check to see if the handle name exists already
-        let handle = self.databaseRoot.child("handle-names").child(self.handleName.text!).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+        let handle = self.databaseRoot.child("handles").child(self.handleName.text!).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
             if (!snapshot.exists()) {
+                
                 // update the handle in the user-profiles and in handles node
-                self.databaseRoot.child("user-profiles").child(self.currentUser!).child("handle-names").setValue(self.handleName.text!.lowercased())
+                self.databaseRoot.child("user_profiles").child(self.currentUser!).child("handles").setValue(self.handleName.text!.lowercased())
                 
                 // update the name of user
-                self.databaseRoot.child("user-profiles").child(self.currentUser!).child("name").setValue(self.name.text!)
+                self.databaseRoot.child("user_profiles").child(self.currentUser!).child("name").setValue(self.name.text!)
             
                 // update the handle in the handle node
-                self.databaseRoot.child("handle-names").child(self.handleName.text!.lowercased()).setValue(self.currentUser)
+                self.databaseRoot.child("handles").child(self.handleName.text!.lowercased()).setValue(self.currentUser)
                 
                 // send user to home screen
                 self.performSegue(withIdentifier: "goToHomeVC", sender: nil)

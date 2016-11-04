@@ -34,7 +34,7 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func cancelBtnPressed(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func loginBtnTapped(_ sender: AnyObject) {
@@ -44,7 +44,7 @@ class LoginVC: UIViewController {
             // if there is no error
             if error == nil {
                 
-                self.databaseRoot.child("user-profiles").child((user?.uid)!).child("handle-names").observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
+                self.databaseRoot.child("user_profiles").child((user?.uid)!).child("handles").observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
                     
                     if !snapshot.exists() {
                         

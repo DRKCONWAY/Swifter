@@ -16,10 +16,12 @@
 		03318D8C1DC51B56001F121A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03318D8B1DC51B56001F121A /* GoogleService-Info.plist */; };
 		035C4C921DC55D4200A44730 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C4C911DC55D4200A44730 /* Constants.swift */; };
 		035C4C941DC56E5F00A44730 /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C4C931DC56E5F00A44730 /* NewUserVC.swift */; };
+		036663421DCC3CA8002F31BF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036663411DCC3CA8002F31BF /* MeViewController.swift */; };
 		0391B84D1DC5BDF9001EF265 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391B84C1DC5BDF9001EF265 /* HomeCell.swift */; };
 		0391B84F1DC5CED6001EF265 /* NewSweetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */; };
 		039B687A1DC536CD00E2B342 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B68791DC536CD00E2B342 /* SignUpVC.swift */; };
 		039B687C1DC536DC00E2B342 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039B687B1DC536DC00E2B342 /* LoginVC.swift */; };
+		039FAF2F1DC850D60016EC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039FAF2E1DC850D60016EC01 /* ViewController.swift */; };
 		7340805F571B8CFBC1762525 /* Pods_Swifter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE522DE5B4B31C3EF015B85E /* Pods_Swifter.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,10 +37,12 @@
 		03318D8B1DC51B56001F121A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		035C4C911DC55D4200A44730 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		035C4C931DC56E5F00A44730 /* NewUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
+		036663411DCC3CA8002F31BF /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		0391B84C1DC5BDF9001EF265 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSweetVC.swift; sourceTree = "<group>"; };
 		039B68791DC536CD00E2B342 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		039B687B1DC536DC00E2B342 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		039FAF2E1DC850D60016EC01 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22A412C3BDE561CC39121B90 /* Pods-Swifter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swifter/Pods-Swifter.debug.xcconfig"; sourceTree = "<group>"; };
 		83DC70A0101517C0AAE60357 /* Pods-Swifter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swifter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swifter/Pods-Swifter.release.xcconfig"; sourceTree = "<group>"; };
 		DE522DE5B4B31C3EF015B85E /* Pods_Swifter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swifter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +103,9 @@
 				039B687B1DC536DC00E2B342 /* LoginVC.swift */,
 				035C4C931DC56E5F00A44730 /* NewUserVC.swift */,
 				030FEF191DC5A36000512349 /* HomeVC.swift */,
-				0391B84C1DC5BDF9001EF265 /* HomeCell.swift */,
 				0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */,
+				039FAF2E1DC850D60016EC01 /* ViewController.swift */,
+				036663411DCC3CA8002F31BF /* MeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		03318D8A1DC51B3D001F121A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0391B84C1DC5BDF9001EF265 /* HomeCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039FAF2F1DC850D60016EC01 /* ViewController.swift in Sources */,
+				036663421DCC3CA8002F31BF /* MeViewController.swift in Sources */,
 				0391B84F1DC5CED6001EF265 /* NewSweetVC.swift in Sources */,
 				035C4C921DC55D4200A44730 /* Constants.swift in Sources */,
 				030FEF1A1DC5A36000512349 /* HomeVC.swift in Sources */,
@@ -321,6 +329,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -370,6 +379,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

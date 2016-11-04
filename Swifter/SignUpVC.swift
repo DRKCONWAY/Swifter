@@ -61,7 +61,7 @@ class SignUpVC: UIViewController {
                     
                     if error == nil {
                         
-                        self.databaseRoot.child("user-profiles").child((user?.uid)!).child("email").setValue(self.emailField.text)
+                        self.databaseRoot.child("user_profiles").child((user?.uid)!).child("email").setValue(self.emailField.text)
                         
                         self.performSegue(withIdentifier: "goToNewUserVC", sender: nil)
                     }
