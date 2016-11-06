@@ -218,7 +218,7 @@
                                     <navigationItem id="ueP-hf-6s0">
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" style="done" id="CgZ-xG-cJJ">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HmV-1R-pCN">
-                                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                                <rect key="frame" x="16" y="963" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -469,10 +469,10 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeVCCell" rowHeight="151" id="Xcz-xY-mfL" customClass="HomeCell" customModule="Swifter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="151"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xcz-xY-mfL" id="TSM-hT-vht">
-                                            <frame key="frameInset" width="320" height="150"/>
+                                            <frame key="frameInset" width="1000" height="151"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="final profile" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-V1-Vdf">
@@ -658,6 +658,35 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWN-em-DYA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dE7-Yd-6bD"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="e5w-Ao-RSn">
+                                        <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4aA-hz-WVt"/>
+                                    <barButtonItem title="Sweet!" style="plain" id="V9c-Bn-jfQ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f9Q-gb-YBz">
+                                            <rect key="frame" x="248" y="7" width="56" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Sweet!">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="sweetButtonPressed:" destination="O2j-9V-XrD" eventType="touchUpInside" id="2o0-hl-zol"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gJ4-oc-7tq">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -667,40 +696,25 @@
                                     <outlet property="delegate" destination="O2j-9V-XrD" id="jpU-Tj-fOo"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNb-Pg-G7U">
-                                <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="0.6511937792056075" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="sqg-1V-Haj"/>
-                                    <constraint firstAttribute="height" constant="30" id="vBD-uP-Eqm"/>
-                                </constraints>
-                                <state key="normal" title="Sweet!">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="sweetButtonPressed:" destination="O2j-9V-XrD" eventType="touchUpInside" id="zLf-BG-6CT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KCX-Tt-cZH" firstAttribute="top" secondItem="gJ4-oc-7tq" secondAttribute="bottom" constant="262" id="1cB-9J-bq8"/>
+                            <constraint firstItem="KCX-Tt-cZH" firstAttribute="top" secondItem="gJ4-oc-7tq" secondAttribute="bottom" constant="323" id="1cB-9J-bq8"/>
+                            <constraint firstItem="KCX-Tt-cZH" firstAttribute="top" secondItem="CWN-em-DYA" secondAttribute="bottom" id="FD1-Xr-jak"/>
                             <constraint firstItem="gJ4-oc-7tq" firstAttribute="centerX" secondItem="5EY-7d-3b8" secondAttribute="centerX" id="OZx-rf-oKb"/>
                             <constraint firstAttribute="trailing" secondItem="5EY-7d-3b8" secondAttribute="trailing" id="UCm-0F-w6h"/>
                             <constraint firstItem="gJ4-oc-7tq" firstAttribute="top" secondItem="5EY-7d-3b8" secondAttribute="bottom" id="X20-w2-zfx"/>
                             <constraint firstItem="gJ4-oc-7tq" firstAttribute="leading" secondItem="QfZ-oK-rqO" secondAttribute="leadingMargin" id="iCh-55-G0J"/>
                             <constraint firstItem="5EY-7d-3b8" firstAttribute="leading" secondItem="QfZ-oK-rqO" secondAttribute="leading" id="is5-IQ-Xny"/>
+                            <constraint firstItem="CWN-em-DYA" firstAttribute="leading" secondItem="QfZ-oK-rqO" secondAttribute="leading" id="izl-QT-7qr"/>
                             <constraint firstItem="5EY-7d-3b8" firstAttribute="top" secondItem="hHk-5X-wzc" secondAttribute="bottom" constant="8" id="ksE-cR-yoG"/>
-                            <constraint firstItem="CNb-Pg-G7U" firstAttribute="top" secondItem="5EY-7d-3b8" secondAttribute="bottom" constant="242" id="v8X-Q5-R5Y"/>
-                            <constraint firstItem="CNb-Pg-G7U" firstAttribute="trailing" secondItem="QfZ-oK-rqO" secondAttribute="trailingMargin" id="vPE-2M-Cu9"/>
+                            <constraint firstAttribute="trailing" secondItem="CWN-em-DYA" secondAttribute="trailing" id="ztK-43-EYR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="newSweetTextView" destination="gJ4-oc-7tq" id="hga-t6-VAY"/>
+                        <outlet property="newSweetToolbar" destination="CWN-em-DYA" id="fm0-no-pUT"/>
+                        <outlet property="toolbarBottomConstraint" destination="FD1-Xr-jak" id="rQg-sz-d4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noC-Wo-NGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -780,11 +794,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbg-0F-l8r">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swifter bird" translatesAutoresizingMaskIntoConstraints="NO" id="nHZ-Kp-wBz">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Swifter bird" translatesAutoresizingMaskIntoConstraints="NO" id="nHZ-Kp-wBz">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="RRp-OW-YpJ"/>
                                             <constraint firstAttribute="width" constant="80" id="Sa4-cv-Sde"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="nDF-SC-gFf" appends="YES" id="9Og-2y-Rrs"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ECx-EP-eIW">
                                         <subviews>
@@ -793,6 +811,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="En3-U8-jMs">
                                                 <state key="normal" title="Logout"/>
+                                                <connections>
+                                                    <action selector="logoutButtonTapped:" destination="irn-kD-L9n" eventType="touchUpInside" id="nzA-42-C8g"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8w-t9-FeC">
                                                 <state key="normal" title="Edit profile"/>
@@ -921,19 +942,33 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="profile" id="ZiG-KK-VU9"/>
                     <connections>
+                        <outlet property="about" destination="zwO-PJ-eF1" id="nrp-qF-Kn4"/>
+                        <outlet property="handle" destination="Otf-fe-WLP" id="WPt-H3-1fB"/>
                         <outlet property="likesContainer" destination="Q39-uQ-Rn9" id="sQn-jd-mi5"/>
                         <outlet property="mediaContainer" destination="EZl-yk-Oon" id="pjA-r5-T9W"/>
+                        <outlet property="name" destination="jED-7D-FBo" id="mfz-qs-Exl"/>
+                        <outlet property="profilePic" destination="nHZ-Kp-wBz" id="hWc-nL-MpY"/>
                         <outlet property="sweetsContainer" destination="h6K-cP-IaI" id="rbm-AR-hHb"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="yNP-Z4-3dF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geI-ar-2aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nDF-SC-gFf" userLabel="Profile pic tapped">
+                    <connections>
+                        <action selector="profilePicTapped:" destination="irn-kD-L9n" id="CT5-u8-Gdu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4040.625" y="1208.4507042253522"/>
+            <point key="canvasLocation" x="4073" y="1186"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nsk-Qo-2fq">
             <objects>
                 <viewController id="KMh-CY-nkP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nwR-ha-XDQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4gT-zQ-KJl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="daI-lv-Vm5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -960,6 +995,10 @@
         <scene sceneID="AuW-VX-gOv">
             <objects>
                 <viewController id="VMD-zJ-WJ5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W7M-Oj-esC"/>
+                        <viewControllerLayoutGuide type="bottom" id="W8e-Du-Zkm"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lU0-GC-BCm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -986,6 +1025,10 @@
         <scene sceneID="4pH-SZ-M9g">
             <objects>
                 <viewController id="7O4-lS-BWz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cLx-Vb-RUb"/>
+                        <viewControllerLayoutGuide type="bottom" id="8A6-L3-DIZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a0W-Nw-CsW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1028,5 +1071,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="WUt-7L-pJf"/>
         <segue reference="STI-it-xRC"/>
+        <segue reference="yNP-Z4-3dF"/>
     </inferredMetricsTieBreakers>
 </document>

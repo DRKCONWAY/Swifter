@@ -13,13 +13,17 @@ import FirebaseDatabase
 class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var newSweetTextView: UITextView!
+    @IBOutlet weak var newSweetToolbar: UIToolbar!
+    @IBOutlet weak var toolbarBottomConstraint: NSLayoutConstraint!
     
+    var toolbarBottomConstraintInitialValue: CGFloat?
     var databaseRef = FIRDatabase.database().reference()
     var loggedInUser: AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.newSweetToolbar.isHidden = true
         
         self.loggedInUser = FIRAuth.auth()?.currentUser
         
@@ -31,6 +35,13 @@ class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         newSweetTextView.textContainerInset = UIEdgeInsetsMake(30, 20, 20, 20)
         newSweetTextView.text = "What's going on?"
         newSweetTextView.textColor = UIColor.lightGray
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        enableKeyboardHideOnTapped()
+        self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint.constant
         
     }
     
@@ -77,11 +88,59 @@ class NewSweetVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         view.endEditing(true)
     }
 
+    func enableKeyboardHideOnTapped() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewSweetVC.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewSweetVC.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewSweetVC.hideKeyboard))
+        
+        self.view.addGestureRecognizer(tap)
+        
+    }
     
+    func keyboardWillShow(_ notification: NSNotification) {
+        
+        let info = notification.userInfo!
+        
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+        
+        UIView.animate(withDuration: duration) { 
+            
+            self.toolbarBottomConstraint.constant = keyboardFrame.size.height
+            
+            self.newSweetToolbar.isHidden = false
+            
+            self.view.layoutIfNeeded()
+            
+        }
+        
+    }
     
+    func keyboardWillHide(_ notification: NSNotification) {
+        
+      let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+        
+        UIView.animate(withDuration: duration) { 
+            
+            self.toolbarBottomConstraint.constant = self.toolbarBottomConstraintInitialValue!
+            
+            self.newSweetToolbar.isHidden = true
+            
+            self.view.layoutIfNeeded()
+            
+        }
+        
+    }
     
-    
-    
+    func hideKeyboard() {
+        
+        self.view.endEditing(true)
+        
+    }
     
     
     
