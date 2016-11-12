@@ -12,7 +12,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class MeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+class MeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageLoading: UIActivityIndicatorView!
     @IBOutlet weak var sweetsContainer: UIView!
@@ -139,7 +140,7 @@ class MeViewController: UIViewController, UIImagePickerControllerDelegate, UINav
             newImageView.backgroundColor = UIColor.black
             newImageView.contentMode = .scaleAspectFit
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullScreenImage))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullScreenImage(_:)))
             
             newImageView.addGestureRecognizer(tap)
             self.view.addSubview(newImageView)
@@ -181,7 +182,7 @@ class MeViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         self.present(myActionSheet, animated: true, completion: nil)
     }
     
-    func dismissFullScreenImage(sender: UITapGestureRecognizer) {
+    func dismissFullScreenImage(_ sender: UITapGestureRecognizer) {
         
         // removes the larger image from the view
         sender.view?.removeFromSuperview()

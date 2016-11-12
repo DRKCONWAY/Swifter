@@ -9,8 +9,9 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import SDWebImage
 
-class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeVC: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var activityLoader: UIActivityIndicatorView!
@@ -19,14 +20,17 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var loggedInUser: AnyObject?
     var loggedInUserData: NSDictionary?
     var sweets = [NSDictionary]()
+    var defaultImageHeightConstraint: CGFloat = 104
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        homeTableView.estimatedRowHeight = 202
+        homeTableView.rowHeight = UITableViewAutomaticDimension
         
-        homeTableView.delegate = self
         homeTableView.dataSource = self
         
-        //Looks for single or multiple taps.
+                //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -66,7 +70,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
              }
         }
-
+     
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,6 +78,30 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell: HomeCell = tableView.dequeueReusableCell(withIdentifier: "HomeVCCell", for: indexPath) as! HomeCell
 
         let sweet = sweets[(self.sweets.count - 1) - (indexPath.row)]["text"] as! String
+        
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(self.didTapMediaInSweet(_:)))
+        
+        cell.sweetImage.addGestureRecognizer(imageTap)
+        
+        if sweets[(self.sweets.count - 1) - (indexPath.row)]["picture"] != nil {
+            
+            cell.sweetImage.isHidden = false
+            cell.sweetImageHeightConstraint.constant = defaultImageHeightConstraint
+            
+            let picture = sweets[(self.sweets.count - 1) - (indexPath.row)]["picture"] as! String
+            
+            let url = URL(string: picture)
+            cell.sweetImage.layer.cornerRadius = 12
+            cell.sweetImage.layer.borderWidth = 3
+            
+            cell.sweetImage!.sd_setImage(with: url, placeholderImage: UIImage(named:"Swifter bird")!)
+            
+        } else {
+            
+            cell.sweetImage.isHidden = true
+            cell.sweetImageHeightConstraint.constant = 0
+            
+        }
         
         
         cell.configure(nil, name: self.loggedInUserData!["name"] as! String, handle: loggedInUserData!["handles"] as! String, sweet: sweet)
@@ -88,10 +116,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
        
     }
  
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -99,8 +123,30 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         view.endEditing(true)
     }
 
+    func didTapMediaInSweet(_ sender: UITapGestureRecognizer) {
+        
+        
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView(image: imageView.image)
+        
+        newImageView.frame = self.view.frame
+        
+        newImageView.backgroundColor = UIColor.black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer(target:self,action:#selector(self.dismissFullScreenImage))
+        
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+        
+    }
     
-    
+    func dismissFullScreenImage(sender: UITapGestureRecognizer) {
+        
+      sender.view?.removeFromSuperview()
+        
+    }
     
     
     

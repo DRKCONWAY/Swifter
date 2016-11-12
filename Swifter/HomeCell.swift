@@ -13,8 +13,10 @@ open class HomeCell: UITableViewCell {
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var handle: UILabel!
-    @IBOutlet weak var sweet: UITextView!
+    @IBOutlet weak var sweet: UILabel!
+    @IBOutlet weak var sweetImage: UIImageView!
     
+    @IBOutlet weak var sweetImageHeightConstraint: NSLayoutConstraint!
     
     override open func awakeFromNib() {
         super.awakeFromNib()
