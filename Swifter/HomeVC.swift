@@ -91,8 +91,8 @@ class HomeVC: UIViewController, UITableViewDataSource {
             let picture = sweets[(self.sweets.count - 1) - (indexPath.row)]["picture"] as! String
             
             let url = URL(string: picture)
-            cell.sweetImage.layer.cornerRadius = 12
-            cell.sweetImage.layer.borderWidth = 3
+            cell.sweetImage.layer.cornerRadius = 9
+            cell.sweetImage.layer.borderWidth = 2
             
             cell.sweetImage!.sd_setImage(with: url, placeholderImage: UIImage(named:"Swifter bird")!)
             

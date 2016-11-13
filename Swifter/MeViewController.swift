@@ -133,18 +133,18 @@ class MeViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         let viewPicture = UIAlertAction(title: "ViewPicture", style: .default) { (action) in
             
             let imageView = sender.view as! UIImageView
-            
             let newImageView = UIImageView(image: imageView.image)
             
             newImageView.frame = self.view.frame
+            
             newImageView.backgroundColor = UIColor.black
             newImageView.contentMode = .scaleAspectFit
+            newImageView.isUserInteractionEnabled = true
             
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissFullScreenImage(_:)))
+            let tap = UITapGestureRecognizer(target: self,action: #selector(self.dismissFullScreenImage))
             
             newImageView.addGestureRecognizer(tap)
             self.view.addSubview(newImageView)
-            
         }
         
         let photoGallery = UIAlertAction(title: "Photos", style: .default) { (action) in

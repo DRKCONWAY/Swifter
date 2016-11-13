@@ -16,6 +16,7 @@
 		03318D8C1DC51B56001F121A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03318D8B1DC51B56001F121A /* GoogleService-Info.plist */; };
 		035C4C921DC55D4200A44730 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C4C911DC55D4200A44730 /* Constants.swift */; };
 		035C4C941DC56E5F00A44730 /* NewUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035C4C931DC56E5F00A44730 /* NewUserVC.swift */; };
+		0364414E1DD8B89400D74594 /* FollowUsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0364414D1DD8B89400D74594 /* FollowUsersVC.swift */; };
 		036663421DCC3CA8002F31BF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036663411DCC3CA8002F31BF /* MeViewController.swift */; };
 		0391B84D1DC5BDF9001EF265 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391B84C1DC5BDF9001EF265 /* HomeCell.swift */; };
 		0391B84F1DC5CED6001EF265 /* NewSweetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */; };
@@ -37,6 +38,7 @@
 		03318D8B1DC51B56001F121A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		035C4C911DC55D4200A44730 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		035C4C931DC56E5F00A44730 /* NewUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserVC.swift; sourceTree = "<group>"; };
+		0364414D1DD8B89400D74594 /* FollowUsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUsersVC.swift; sourceTree = "<group>"; };
 		036663411DCC3CA8002F31BF /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		0391B84C1DC5BDF9001EF265 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSweetVC.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0391B84E1DC5CED6001EF265 /* NewSweetVC.swift */,
 				039FAF2E1DC850D60016EC01 /* ViewController.swift */,
 				036663411DCC3CA8002F31BF /* MeViewController.swift */,
+				0364414D1DD8B89400D74594 /* FollowUsersVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				0391B84D1DC5BDF9001EF265 /* HomeCell.swift in Sources */,
 				03318D791DC519D0001F121A /* WelcomeVC.swift in Sources */,
 				039B687A1DC536CD00E2B342 /* SignUpVC.swift in Sources */,
+				0364414E1DD8B89400D74594 /* FollowUsersVC.swift in Sources */,
 				039B687C1DC536DC00E2B342 /* LoginVC.swift in Sources */,
 				035C4C941DC56E5F00A44730 /* NewUserVC.swift in Sources */,
 				03318D771DC519D0001F121A /* AppDelegate.swift in Sources */,
